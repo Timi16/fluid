@@ -1,5 +1,7 @@
 mod db;
+mod benchmarks;
 mod metrics;
+mod profiling;
 mod state;
 mod stellar;
 mod xdr;
