@@ -63,6 +63,7 @@ import {
   notFoundHandler,
 } from "./middleware/errorHandler";
 import { apiKeyRateLimit } from "./middleware/rateLimit";
+import { networkSimulationMiddleware } from "./middleware/networkSimulation";
 import { tenantTierTxLimit } from "./middleware/txLimit";
 import { AlertService } from "./services/alertService";
 import { initializeFcmNotifier } from "./services/fcmNotifier";
@@ -249,6 +250,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(networkSimulationMiddleware(config));
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   if (err.message === "Origin not allowed by CORS") {
