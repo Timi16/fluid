@@ -1,9 +1,11 @@
 mod config;
 mod db;
+mod benchmarks;
 mod error;
 mod horizon;
 mod logging;
 mod metrics;
+mod profiling;
 mod state;
 mod stellar;
 mod xdr;
